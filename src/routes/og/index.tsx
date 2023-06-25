@@ -17,7 +17,7 @@ const og: FastifyPluginAsync = async (fastify, _opts): Promise<void> => {
         const imageRes = await renderToImage(
           <div
             style={{
-              fontSize: 128,
+              fontSize: 100,
               background: "white",
               width: "100%",
               height: "100%",
@@ -27,7 +27,7 @@ const og: FastifyPluginAsync = async (fastify, _opts): Promise<void> => {
               justifyContent: "center",
             }}
           >
-            Hello world!
+            {text}
           </div>,
           {
             width: 1200,
