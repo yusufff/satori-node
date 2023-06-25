@@ -1,0 +1,65 @@
+{
+  "name": "node-satori",
+  "version": "0.0.1",
+  "description": "A node server running satori",
+  "keywords": [
+    "satori",
+    "@vercel/og",
+    "fastify"
+  ],
+  "license": "MIT",
+  "author": "Yusuf YILDIZ <a.yusuf.yildiz@hotmail.com>",
+  "repository": "https://github.com/yusufff/node-satori",
+  "main": "app.ts",
+  "scripts": {
+    "build": "tsup",
+    "build:prod": "tsup --env.NODE_ENV production",
+    "copy:assets": "cpy 'src/assets/**/*' dist/assets",
+    "dev": "tsx watch src/server.ts | pino-pretty --colorize",
+    "start": "tsx src/server.ts | pino-pretty --colorize",
+    "start:prod": "node dist/server.js",
+    "format": "prettier --write \"src/**/*.(ts|tsx)\"",
+    "lint": "eslint \"src/**/*.(ts|tsx)\" --fix",
+    "typecheck": "tsc -b"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "cpy-cli": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "pino-pretty": "^10.0.0",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@fastify/autoload": "^5.7.1",
+    "@fastify/env": "^4.2.0",
+    "@resvg/resvg-js": "^2.4.1",
+    "close-with-grace": "^1.2.0",
+    "fastify": "^4.18.0",
+    "fastify-tsconfig": "^1.0.1",
+    "react": "^18.2.0",
+    "satori": "^0.10.1"
+  },
+  "tsup": {
+    "entry": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true,
+    "format": [
+      "cjs"
+    ],
+    "target": "es2018",
+    "onSuccess": "yarn copy:assets"
+  }
+}

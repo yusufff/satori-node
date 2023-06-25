@@ -1,0 +1,14 @@
+{
+  "ts-node": {
+    "compilerOptions": {
+      "esModuleInterop": true
+    }
+  },
+  "extends": "fastify-tsconfig",
+  "compilerOptions": {
+    "jsx": "react",
+    "outDir": "dist",
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}
