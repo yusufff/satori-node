@@ -9,7 +9,7 @@ const schema = {
       type: "string",
       default: 3000,
     },
-    HOST: {
+    SERVER_HOSTNAME: {
       type: "string",
       default: "127.0.0.1",
     },
