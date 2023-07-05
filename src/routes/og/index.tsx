@@ -32,7 +32,6 @@ const og: FastifyPluginAsync = async (fastify, _opts): Promise<void> => {
           {
             width: 1200,
             height: 600,
-            debug: false,
           }
         );
 

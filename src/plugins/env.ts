@@ -4,11 +4,18 @@ import fp from "fastify-plugin";
 
 const schema = {
   type: "object",
-  required: ["PORT"],
   properties: {
     PORT: {
       type: "string",
       default: 3000,
+    },
+    HOST: {
+      type: "string",
+      default: "127.0.0.1",
+    },
+    GCLOUD_API_KEY: {
+      type: "string",
+      default: "",
     },
   },
 };
